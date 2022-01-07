@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DashBoard</title>
+	<link rel="stylesheet" href="./css/dashboard_style.css">
+	 <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+</head>
+<body>
+	<div class="company_matrix_row">
+		<font>Company Metrics</font>
+	</div>
+	<div class="main_container">
+		<div class="card_first_row">
+			<div class="card" style="margin-left: 10px;">
+				<div class="card_left_color"> 
+					<font class="number" style="color: #41bf99;">$406,411.29</font>
+					<font class="text">Total Revenue</font>
+				</div>
+			</div>
+			<div class="card" style="margin-left: 2%;">
+				<div class="card_left_color">
+					<font class="number">602</font>
+					<font class="text">Total Jobs Avg</font>
+				</div>
+			</div>
+			<div class="card" style="margin-left: 2%;">
+				<div class="card_left_color">
+					<font class="number">655</font>
+					<font class="text">Tickets Created</font>
+				</div>
+			</div>
+			<div class="card" style="margin-left: 2%;">
+				<div class="card_left_color">
+					<font class="number">735</font>
+					<font class="text">Tickets Scheduled</font>
+				</div>
+			</div>
+			
+		</div>
+		<div class="card_second_row">
+			<div class="card" style="margin-left: 10px;">
+				<div class="card_left_color">
+					<font class="number" style="color: red;">$110,448.8</font>
+					<font class="text">Outstanding Amount</font>
+				</div>
+			</div>
+			<div class="card" style="margin-left: 2%;">
+				<div class="card_left_color">
+					<font class="number">105</font>
+					<font class="text">Memberships Sold</font>
+				</div>
+			</div>
+			<div class="card" style="margin-left: 2%;">
+				<div class="card_left_color">
+					<font class="number">436</font>
+					<font class="text">Jobs Completed</font>
+				</div>
+			</div>
+			<div class="card" style="margin-left: 2%;">
+				<div class="card_left_color">
+					<font class="number">65</font>
+					<font class="text">Total Canceled</font>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div>
+		<div style="width: 50%;">
+		<div class="revenue_text" style="margin-left:20px; ">
+			<font>Revenue By Job Location</font>
+		</div>
+
+		<div id="container" style="width: 90%; height: 250px; padding: 2%; margin-left: 4%;"></div>
+    <script>
+      anychart.onDocumentReady(function() {
+        // set the data
+        var data = {
+            rows: [
+              ["Everett", 1500],
+              ["Seattle", 87000],
+              ["Lynnwood", 175000],
+              ["Bothell", 10000],
+              ["Mukilteo", 142000],
+              ["Edmonds", 25000]
+        ]};
+ 
+	        // create the chart
+	        var chart = anychart.bar();
+	 
+	        // add the data
+	        chart.data(data);
+	 
+	        // draw
+	        chart.container("container");
+	        chart.draw();
+
+	      });
+
+	    </script>
+		</div>
+
+		<div style="width: 50%; height: 250px; margin-left: 50%; margin-top: -20.5%;">
+		<div class="revenue_text" style="margin-left:-5%; margin-top: -20px;">
+			<font style="margin-bottom: 20px;">Revenue By Job Type</font>
+		</div>
+
+		<div id="container1" style="width: 90%; height: 100%"></div>
+		<script>
+      	anychart.onDocumentReady(function() {
+        // set the data
+        var data = {
+            rows: [
+              ["Service Plumbing", 150000],
+              ["Bid WORK HVAC", 80000],
+              ["Service HVAC", 15000],
+              ["Bid Work Plumbing", 100000],
+              ["HWT Replacemnet", 42000],
+              ["Maintanance", 125000],
+			  ["Material Sale", 5000]
+        ]};
+ 
+	        // create the chart
+	        var chart = anychart.bar();
+	 
+	        // add the data
+	        chart.data(data);
+	 
+	        // draw
+	        chart.container("container1");
+	        chart.draw();
+
+	      });
+
+	    </script>
+	    
+		</div>
+	</div>
+
+</body>
+</html>

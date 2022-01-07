@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>SMARTSERV Forgot Password</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<body>
+    <div class="center">
+        <img src="./imgs/logo.png" class="img_logo">
+        <form method="post" name="forgotpass">
+            <div class="input_field">
+                <input type="text" name="email" placeholder="Username" class="txt_field" required>
+            </div>
+            <input type="submit" value="Submit" class="submit" onclick="sendEmail(document.forgotpass.email)">
+        </form>
+    </div>
+    <script type="text/javascript">
+        const btn = document.querySelector("Submit");
+        const inputs = document.querySelector("form");
+        btn.addEventListener('click', () => {
+            Email.send({
+                Host: "smtp.mailtrap.io",
+                Username: "654aa8c165fd9d",
+                Password: "5af9a3b69ca44b",
+                To: 'support@smartserv.io',
+                From: inputs.elements["email"].value,
+                Subject: "This is the subject",
+                Body: "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        })
+    </script>
+</body>
+
+</html>
