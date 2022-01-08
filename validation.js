@@ -20,12 +20,12 @@ function Validation(inputText,password)
             return false;
         }
         else {
-            alert("Invalid email address!");
+            alert("Invalid Password Match!");
             document.loginForm.email.focus();
             return false;
         }
 	}else{
-		alert("Password Pattern dosen't match! Please try again");
+		alert("Password Pattern dosen't match! only @ is allowed and One Upper case one lowercase and numarical values");
 		document.loginForm.password.focus();
 		return false;
 	}
