@@ -54,7 +54,7 @@ body{
   font-weight: 500;
 }
 
-input[type="button"]{
+input[type="submit"]{
   margin: 3%;
   width: 85%;
   margin-left: 8%;

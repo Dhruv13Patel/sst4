@@ -11,13 +11,19 @@ function Validation(inputText,password)
 	var passformat = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@])/;
 	if(password.value.match(passformat))
 	{
-		if(password.value == "SmartServTest@123")
-		{
-			window.location.href = 'dashboard.html';    
-			return false;
-		}else{
-			alert("Wrong Password!");
-		}
+		if (password.value == "SmartServTest@123") {
+            window.location.href = 'dashboard.html';
+            return false;
+        }
+        else if (password.value.match(passformat)) {
+            window.location.href = 'user.html';
+            return false;
+        }
+        else {
+            alert("Invalid email address!");
+            document.loginForm.email.focus();
+            return false;
+        }
 	}else{
 		alert("Password Pattern dosen't match! Please try again");
 		document.loginForm.password.focus();
